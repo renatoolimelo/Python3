@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1YJnRSrXOPxXZ7bto7xK5027Fxj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -15,6 +22,34 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="adivinhacao" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="jogos" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adivinhacao.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.adivinhacao" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -30,6 +65,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1366" height="173" key="GridCell.Tab.0.bottom" timestamp="1582671419346">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1366" height="173" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1582671419346" />
+    <state width="1366" height="173" key="GridCell.Tab.0.center" timestamp="1582671419346">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1366" height="173" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1582671419346" />
+    <state width="1366" height="173" key="GridCell.Tab.0.left" timestamp="1582671419345">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1366" height="173" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1582671419345" />
+    <state width="1366" height="173" key="GridCell.Tab.0.right" timestamp="1582671419346">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1366" height="173" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1582671419346" />
     <state x="366" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1582669560612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
