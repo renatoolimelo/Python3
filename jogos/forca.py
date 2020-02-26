@@ -5,8 +5,13 @@ def jogar():
     print("*********************************")
 
     palavra_secreta = "banana".upper()
-    letras_acertadas = [ "_" , "_" , "_" , "_" , "_" , "_" ]
+    letras_acertadas = ["_" for letra in palavra_secreta]
+
+    ##for letra in palavra_secreta:
+    ##    letras_acertadas.append("_")
+
     ##palavra_secreta.capitalize() banana == Banana
+
     ##palavra_secreta.endswith("na") banana == true  palavra_secreta.endswith("naa") banana == false
 
     enforcou = False
@@ -18,7 +23,7 @@ def jogar():
     while(not enforcou and not acertou):
 
         chute = input("Qual letra? ")
-        chute = chute.strip().upper()    ; #remover espaços, e deixar tudo maiusculo
+        chute = chute.strip().upper()     #remover espaços, e deixar tudo maiusculo
 
         if (chute in palavra_secreta):
 
