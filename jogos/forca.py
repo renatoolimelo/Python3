@@ -11,7 +11,7 @@ def jogar():
 
     enforcou = False
     acertou  = False
-    
+
     print(letras_acertadas)
 
     while(not enforcou and not acertou):
@@ -30,6 +30,9 @@ def jogar():
 
             index = index + 1
 
+        letras_faltando = str(letras_acertadas.count('_'))
+        print()
+        print("Ainda faltam acertas {} letras".format(letras_faltando))
         print(letras_acertadas)
 
         print("Jogando ...")
