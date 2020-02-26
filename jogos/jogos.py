@@ -1,14 +1,23 @@
-print("*********************************")
-print("*******Escolha o seu jogo!*******")
-print("*********************************")
+import forca
+import adivinhacao
 
-print("(1) Forca (2) Adivinhação")
+def escolhe_jogo():
+    print("*********************************")
+    print("*******Escolha o seu jogo!*******")
+    print("*********************************")
 
-jogo = int(input("Informe o jogo escolhido: "))
+    print("(1) Forca (2) Adivinhação")
 
-if (jogo == 1):
-    print("Jogando forca")
-elif (jogo == 2):
-    print("Jogando adivinhação")
-else:
-    print("Escolha invalida")
+    jogo = int(input("Informe o jogo escolhido: "))
+
+    if (jogo == 1):
+        print("Jogando forca")
+        forca.jogar()
+    elif (jogo == 2):
+        print("Jogando adivinhação")
+        adivinhacao.jogar()
+    else:
+        print("Escolha invalida")
+
+if(__name__ == "__main__"):
+    escolhe_jogo()
