@@ -8,8 +8,22 @@ print("*********************************")
 
 #numero_secreto = round(random.random() * 100)
 numero_secreto = random.randrange(1,101)
-total_de_tentativas = 3
-rodada = 1
+total_de_tentativas = 0
+
+print("Qual nível de dificuldade?")
+print("(1) Fácil (2) Médio (3) Difícil")
+
+nivel_str = input("Defina o nível: ")
+nivel = int(nivel_str)
+
+if(nivel == 1):
+    total_de_tentativas = 20
+elif (nivel == 2):
+    total_de_tentativas = 10
+elif (nivel == 3):
+    total_de_tentativas = 5
+else:
+    print("Informe um número de 1 a 3!")
 
 #print(numero_secreto)
 
