@@ -1,10 +1,17 @@
+import random
+
+#https://docs.python.org/3/library/string.html#formatexamples - exemplos de formatação
+
 print("*********************************")
 print("Bem vindo no jogo de Adivinhação!")
 print("*********************************")
 
-numero_secreto = 42
+#numero_secreto = round(random.random() * 100)
+numero_secreto = random.randrange(1,101)
 total_de_tentativas = 3
 rodada = 1
+
+#print(numero_secreto)
 
 ##while (rodada <= total_de_tentativas ):
 for rodada in range (1,total_de_tentativas + 1):
