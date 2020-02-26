@@ -7,6 +7,10 @@ def jogar():
     palavra_secreta = "banana".upper()
     letras_acertadas = ["_" for letra in palavra_secreta]
 
+    ##arquivo = open("palavras.txt", "r") r - leitura, a - adição - w - escrita
+    ##arquivo = open("palavras.txt", "r") leitura do arquivo
+    ##arquivo.close() fecha o arquivo
+
     ##for letra in palavra_secreta:
     ##    letras_acertadas.append("_")
 
