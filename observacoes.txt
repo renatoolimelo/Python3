@@ -1,0 +1,1 @@
+pip install -U setuptools  -- atualizar setuptools e corrigir erro de setuptools
