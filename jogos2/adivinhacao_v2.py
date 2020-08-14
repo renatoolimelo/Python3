@@ -25,8 +25,6 @@ while (dificuldade < 1 or dificuldade > 3):
     else:
         total_de_tentativas = 4
 
-penalidade = int(total_de_pontos / total_de_tentativas)
-
 print("")
 print("Prêmio do jogo R$ {:08.2f}".format(123.9))
 print("Pontuação {:d}".format(total_de_pontos))
@@ -48,11 +46,11 @@ for rodada in range(1,total_de_tentativas + 1):
 
     if (acertou):
         print("Você acertou!")
+        print("Pontuação {:d}".format(total_de_pontos))
         break
     else:
-        total_de_pontos = total_de_pontos - penalidade
-        print("")
-        print("Pontuacao Atual {:d}".format(total_de_pontos))
+        pontos_perdidos = abs(numero_secreto - chute)
+        total_de_pontos = total_de_pontos - pontos_perdidos
         print("")
         if(maior):
             print("Você chutou um número maior")
@@ -63,4 +61,4 @@ for rodada in range(1,total_de_tentativas + 1):
     print()
 
 print("Fim do jogo número secreto: {}".format(numero_secreto))
-print("Pontuação final {:d}".format(total_de_pontos))
+
