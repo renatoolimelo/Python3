@@ -11,7 +11,7 @@ escolher = 1
 
 while ( repetir == 1 or escolher == 1):
 
-    if (escolher == 1):
+    if (escolher == 1 and repetir == 2):
         escolha = 0
 
     while (escolha < 1 or escolha > 3):
@@ -42,6 +42,9 @@ while ( repetir == 1 or escolher == 1):
         print()
         if (repetir < 1 or repetir > 2):
             print("Escolher número 1 ou 2")
+
+    if( repetir == 1 ):
+        continue
 
     escolher = 0
     while (escolher < 1 or escolher > 2):
