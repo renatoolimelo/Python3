@@ -1,9 +1,32 @@
-def jogar():
+import random
 
-    print("Bem vindo ao jogo de forca")
+def imprime_bem_vindo():
+    print("********************************")
+    print("***Bem vindo ao jogo de forca***")
+    print("********************************")
     print("")
 
-    palavra_secreta = input("Informe a palavra secreta: ").upper().strip()
+def jogar():
+
+    imprime_bem_vindo()
+
+    #arquivo = open("/home/renato/Git/Python3/jogos2/palavras.txt", "r")
+    #palavras = []
+
+    #for linha in arquivo:
+    #    palavras.append(linha.strip().upper())
+    #arquivo.close()
+
+    palavras = []
+    with open("/home/renato/Git/Python3/jogos2/palavras.txt") as arquivo:
+        for linha in arquivo:
+            palavras.append(linha.strip().upper())
+
+    palavra_secreta = palavras[random.randrange(0,len(palavras))]
+
+    #palavra_secreta = input("Informe a palavra secreta: ").upper().strip()
+
+
     letra_vazia = "_"
     letras_acertadas = [letra_vazia for letra in palavra_secreta]
     enforcou = False
