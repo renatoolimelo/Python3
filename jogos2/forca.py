@@ -1,34 +1,11 @@
 import random
 
-def imprime_bem_vindo():
-    print("********************************")
-    print("***Bem vindo ao jogo de forca***")
-    print("********************************")
-    print("")
-
 def jogar():
 
     imprime_bem_vindo()
+    palavra_secreta = carrega_palavra_secreta()
+    letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
 
-    #arquivo = open("/home/renato/Git/Python3/jogos2/palavras.txt", "r")
-    #palavras = []
-
-    #for linha in arquivo:
-    #    palavras.append(linha.strip().upper())
-    #arquivo.close()
-
-    palavras = []
-    with open("/home/renato/Git/Python3/jogos2/palavras.txt") as arquivo:
-        for linha in arquivo:
-            palavras.append(linha.strip().upper())
-
-    palavra_secreta = palavras[random.randrange(0,len(palavras))]
-
-    #palavra_secreta = input("Informe a palavra secreta: ").upper().strip()
-
-
-    letra_vazia = "_"
-    letras_acertadas = [letra_vazia for letra in palavra_secreta]
     enforcou = False
     acertou = False
     letras_chutadas = []
@@ -39,15 +16,7 @@ def jogar():
 
         acertou_a_letra = False
 
-        print("Chute {} de {}".format(tentativa,tentativas_max))
-
-        if(tentativa > 1):
-            print()
-            print("Letras chutadas: {}".format(letras_chutadas))
-            print()
-
-        print(letras_acertadas)
-        print()
+        imprime_tentativas(tentativa, tentativas_max, letras_acertadas, letras_chutadas)
 
         chute = input("Letra escolhida: ").upper().strip()
 
@@ -57,19 +26,19 @@ def jogar():
 
         index = 0
         for letra in palavra_secreta:
-            if( chute == letra ):
+            if (chute == letra):
                 letras_acertadas[index] = letra
                 acertou_a_letra = True
             index += 1
 
-        if(not acertou_a_letra):
+        if (not acertou_a_letra):
             letras_chutadas.append(chute)
             letras_chutadas.sort()
             tentativa += 1
 
-        falta_letras = letra_vazia in letras_acertadas
+        falta_letras = "_" in letras_acertadas
 
-        if( not falta_letras ):
+        if (not falta_letras):
             print("Você ganhou!")
             acertou = True
 
@@ -83,5 +52,38 @@ def jogar():
     print()
     print("Fim do jogo")
 
+def imprime_bem_vindo():
+    print("********************************")
+    print("***Bem vindo ao jogo de forca***")
+    print("********************************")
+    print("")
+
+def carrega_palavra_secreta():
+    palavras = []
+    with open("/home/renato/Git/Python3/jogos2/palavras.txt") as arquivo:
+        for linha in arquivo:
+            palavras.append(linha.strip().upper())
+
+    palavra_secreta = palavras[random.randrange(0, len(palavras))]
+    return palavra_secreta
+
+def inicializa_letras_acertadas(palavra_secreta):
+    letras_acertadas = ["_" for letra in palavra_secreta]
+    return letras_acertadas
+
+def imprime_tentativas(tentativa, tentativas_max, letras_acertadas, letras_chutadas):
+    print("Chute {} de {}".format(tentativa, tentativas_max))
+
+    if (tentativa > 1):
+        print()
+        print("Letras chutadas: {}".format(letras_chutadas))
+        print()
+
+    print(letras_acertadas)
+    print()
+
 if (__name__ == "__main__"):
     jogar()
+
+
+
