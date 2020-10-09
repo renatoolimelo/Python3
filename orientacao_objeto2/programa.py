@@ -28,6 +28,7 @@ class Programa:
     def __str__(self):
         return f'{self._nome} - {self._ano} - {self._likes} Likes'
 
+
 class Filme(Programa):
 
     def __init__(self, nome, ano, duracao):
@@ -40,6 +41,7 @@ class Filme(Programa):
     @property
     def duracao(self):
         return self._duracao
+
 
 class Serie(Programa):
 
@@ -54,22 +56,17 @@ class Serie(Programa):
     def temporadas(self):
         return self._temporadas
 
-class Playlist:
+
+class Playlist(list):
 
     def __init__(self, nome, programas):
         self._nome = nome
-        self._programas = programas
-
-    def tamanho(self):
-        return len(self._programas)
+        super().__init__(programas)
 
     @property
     def nome(self):
         return self._nome
 
-    @property
-    def programas(self):
-        return self._programas
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
 supernatural = Serie("supernatural", 2000, 12)
@@ -90,9 +87,13 @@ supernatural.dar_like()
 supernatural.dar_like()
 supernatural.dar_like()
 
-filmes_e_series = [vingadores, supernatural,demolidor, tmep]
+filmes_e_series = [vingadores, supernatural, demolidor, tmep]
 
 playlist_fim_de_semana = Playlist('Fim de semana', filmes_e_series)
 
-for programa in playlist_fim_de_semana.programas:
+print(f'Tamanho do playlist: {len(playlist_fim_de_semana)}')
+
+for programa in playlist_fim_de_semana:
     print(programa)
+
+print(f'Existe {demolidor in playlist_fim_de_semana}')
