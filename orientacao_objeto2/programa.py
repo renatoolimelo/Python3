@@ -25,31 +25,74 @@ class Programa:
     def nome(self, novo_nome):
         self._nome = novo_nome.title()
 
+    def __str__(self):
+        return f'{self._nome} - {self._ano} - {self._likes} Likes'
+
 class Filme(Programa):
 
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
-        self.duracao = duracao
+        self._duracao = duracao
+
+    def __str__(self):
+        return f'Titulo: {self._nome} - Ano: {self._ano} - Duracao: {self._duracao} - {self._likes} Likes'
+
+    @property
+    def duracao(self):
+        return self._duracao
 
 class Serie(Programa):
 
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
-        self.temporadas = temporadas
+        self._temporadas = temporadas
+
+    def __str__(self):
+        return f'Titulo: {self._nome} - Ano: {self._ano} - Temporadas: {self._temporadas} - {self._likes} Likes'
+
+    @property
+    def temporadas(self):
+        return self._temporadas
+
+class Playlist:
+
+    def __init__(self, nome, programas):
+        self._nome = nome
+        self._programas = programas
+
+    def tamanho(self):
+        return len(self._programas)
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @property
+    def programas(self):
+        return self._programas
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
-vingadores.dar_like()
-vingadores.nome = "capitã marvel"
-print(f'{vingadores.nome} - {vingadores.ano} - {vingadores.duracao} : {vingadores.likes}')
-
 supernatural = Serie("supernatural", 2000, 12)
+tmep = Filme("todo mundo em panico", 1999, 100)
+demolidor = Serie('Demolidor', 2016, 2)
+
+vingadores.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
 supernatural.dar_like()
 supernatural.dar_like()
-supernatural.nome = "o alto da compadecida"
-print(f'{supernatural.nome} - {supernatural.ano} - {supernatural.temporadas} : {supernatural.likes}')
+supernatural.dar_like()
+supernatural.dar_like()
 
-filmes_e_series = [vingadores, supernatural]
+filmes_e_series = [vingadores, supernatural,demolidor, tmep]
 
-for programa in filmes_e_series:
-    detalhes = programa.duracao if (hasattr(programa, 'duracao')) else programa.temporadas
-    print(f'{programa.nome} - {programa.ano} - {detalhes} : {programa.likes}')
+playlist_fim_de_semana = Playlist('Fim de semana', filmes_e_series)
+
+for programa in playlist_fim_de_semana.programas:
+    print(programa)
