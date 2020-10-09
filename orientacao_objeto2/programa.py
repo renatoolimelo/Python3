@@ -48,4 +48,8 @@ supernatural.dar_like()
 supernatural.nome = "o alto da compadecida"
 print(f'{supernatural.nome} - {supernatural.ano} - {supernatural.temporadas} : {supernatural.likes}')
 
+filmes_e_series = [vingadores, supernatural]
 
+for programa in filmes_e_series:
+    detalhes = programa.duracao if (hasattr(programa, 'duracao')) else programa.temporadas
+    print(f'{programa.nome} - {programa.ano} - {detalhes} : {programa.likes}')
